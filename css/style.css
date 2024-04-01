@@ -51,6 +51,7 @@ nav ul {
     display: flex;
     justify-content: center;
     list-style: none;
+    align-items: center;
 }
 nav li {
     justify-content: center;
