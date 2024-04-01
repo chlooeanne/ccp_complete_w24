@@ -1,0 +1,216 @@
+* {
+    padding: 14px;
+    margin: 14px;
+}
+body {
+    font-family: monospace, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #263238;
+}
+img {
+    width: 30rem;
+    align-content: center;
+}
+.grid, .grid2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    padding: 24px;
+    background-color: lavender;
+    justify-items: center;
+}
+.skip {
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    display: block;
+    text-align: center;
+}
+.skip:focus {
+    position: static;
+    overflow: visible;
+    width: auto;
+    height: auto;
+}
+h1 {
+    justify-content: flex-start;
+    font-size: xx-large;
+    font-family: fantasy;
+    padding: 0px 0px 0px 24px;
+    background-color: aqua;
+}
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1rem 2rem;
+    background: linear-gradient(90deg, rgba(255,255,255,1) 5%, rgba(255,0,247,1) 39%, rgba(120,0,255,1) 93%);
+    align-items: center;
+    font-size: x-large;
+}
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+nav li {
+    justify-content: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: black;
+    background-color: rgba(255,255,255,0.6);
+}
+a, a:visited {
+    color: black;
+    background-color: white;
+}
+a:hover, a:focus {
+    border-style: solid;
+    border-radius: 20%;
+    border-width: 2px;
+    font-weight: bold;
+    font-size: xx-large;
+    background-color: white;
+}
+main ul, main ol {
+    padding: 0px 24px 24px 24px;
+    margin: 14px;
+}
+main ul {
+    list-style-type: square;
+}
+main p, ul, ol {
+    padding: 14px;
+    font-size: larger;
+}
+h2 {
+    font-size: xx-large;
+    background-color: blanchedalmond;
+}
+h3 {
+    font-size: x-large;
+}
+.likes, .what, .pros {
+    background-color: aquamarine;
+    margin-top: 24px;
+}
+.photo, .how {
+    background-color: hotpink;
+    margin-top: 24px;
+}
+.cons {
+    background-color: lightcoral;
+    margin-top: 24px;
+}
+#current {
+    border-style: solid;
+    border-radius: 20%;
+    border-width: 2px;
+    font-weight: bold;
+    font-size: xx-large;
+}
+.interests{
+    margin-left: 24px;
+    margin-top: 0;
+}
+#welcome {
+    display: none;
+}
+#welcome_still {
+    display: none;
+}
+@media (prefers-color-scheme: dark) {
+    h1, h2, h3 {
+        color: #263238;
+    }
+    body {
+        background-color: #263238;
+        color: white;
+    }
+}
+@media (min-width:768px) {
+    * {
+        padding: 20px;
+    }
+    nav {
+        justify-content: flex-end;
+    }
+    .grid, .grid2 {
+        grid-template-columns: 1fr 1fr;
+        align-items: end;
+    }
+    .first, .description{
+        display: flex;
+        align-items: flex-start;
+    }
+    .flexpro{
+        display: flex;
+        align-items: flex-start;
+        padding-top: 24px;
+    }
+    img {
+        width: 20rem;
+    }
+}
+@media (min-width:1024px) {
+
+    nav {
+        justify-content: center;
+        padding: 5px;
+    }
+    .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 100;
+    }
+    .sticky + body {
+        padding-top: 60px;
+    }
+    .grid {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        align-items: center;
+    }
+    .grid2 {
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+    }
+    @keyframes page-title {
+        from {width: 0%; opacity: 0;}
+        to {width: 100%; opacity: 1;}
+    }
+    h1 {
+        animation-duration: 1s;
+        /* make sure you name the keyframe and then call the animation in the css */
+        animation-name: page-title;
+    }
+    @keyframes welcome-gif {
+        0% {transform: scale(1);}
+        50% {transform: scale(2.5);}
+        75% {transform: scale(1);}
+        85% {transform: scale(1.5);}
+        100% {transform: scale(1);}
+    }
+    #welcome {
+        display: block;
+        margin-top: 0px;
+        margin-left: auto;
+        margin-right: auto;
+        animation-duration: 1.25s;
+        animation-name: welcome-gif;
+        
+    }
+    @media (prefers-reduced-motion) {
+        #welcome {
+            display: none;
+        }
+        #welcome_still {
+            display: block;
+            margin-top: 0px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h1 {
+            animation-name: none;
+        }
+    }
+}
