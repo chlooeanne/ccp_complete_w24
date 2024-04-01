@@ -1,12 +1,12 @@
-// code to make the navbar sticky on scroll:
+// script to make navbar sticky on scroll:
 window.onscroll = function() {
-  sticky()
+  make_sticky()
 };
 
 var navbar = document.querySelector("nav");
 var sticky = navbar.offsetTop;
 
-function sticky() {
+function make_sticky() {
   if (window.scrollY >= sticky + 5) {
     navbar.classList.add("sticky")
   }
